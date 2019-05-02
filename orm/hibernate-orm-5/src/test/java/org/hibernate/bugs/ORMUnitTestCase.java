@@ -38,7 +38,7 @@ public class ORMUnitTestCase extends BaseCoreFunctionalTestCase {
 	protected Class[] getAnnotatedClasses() {
 		return new Class[] {
 //				Foo.class,
-//				Bar.class
+				Bar.class
 		};
 	}
 
@@ -47,7 +47,7 @@ public class ORMUnitTestCase extends BaseCoreFunctionalTestCase {
 	protected String[] getMappings() {
 		return new String[] {
 //				"Foo.hbm.xml",
-//				"Bar.hbm.xml"
+				"Bar.hbm.xml"
 		};
 	}
 	// If those mappings reside somewhere other than resources/org/hibernate/test, change this.
