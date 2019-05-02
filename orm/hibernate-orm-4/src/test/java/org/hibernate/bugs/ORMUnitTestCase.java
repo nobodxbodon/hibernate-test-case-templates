@@ -19,7 +19,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.cfg.Configuration;
-
 import org.hibernate.testing.junit4.BaseCoreFunctionalTestCase;
 import org.junit.Test;
 
@@ -39,7 +38,7 @@ public class ORMUnitTestCase extends BaseCoreFunctionalTestCase {
 	protected Class[] getAnnotatedClasses() {
 		return new Class[] {
 //				Foo.class,
-//				Bar.class
+				客户.class
 		};
 	}
 
@@ -48,7 +47,7 @@ public class ORMUnitTestCase extends BaseCoreFunctionalTestCase {
 	protected String[] getMappings() {
 		return new String[] {
 //				"Foo.hbm.xml",
-//				"Bar.hbm.xml"
+				"Bar.hbm.xml"
 		};
 	}
 	// If those mappings reside somewhere other than resources/org/hibernate/test, change this.
