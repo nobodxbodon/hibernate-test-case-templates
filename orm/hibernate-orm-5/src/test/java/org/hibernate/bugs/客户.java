@@ -2,16 +2,16 @@ package org.hibernate.bugs;
 
 import java.util.Date;
 
-public class Bar implements java.io.Serializable {
+public class 客户 implements java.io.Serializable {
 
   private Long 客户_ID;
   private String 姓名;
   private Date 创建日期;
 
-  public Bar() {
+  public 客户() {
   }
 
-  public Bar(String 姓名, Date 创建日期) {
+  public 客户(String 姓名, Date 创建日期) {
       this.姓名 = 姓名;
       this.创建日期 = 创建日期;
   }

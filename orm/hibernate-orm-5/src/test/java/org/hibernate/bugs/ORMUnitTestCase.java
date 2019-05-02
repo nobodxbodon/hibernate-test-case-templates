@@ -38,7 +38,7 @@ public class ORMUnitTestCase extends BaseCoreFunctionalTestCase {
 	protected Class[] getAnnotatedClasses() {
 		return new Class[] {
 //				Foo.class,
-				Bar.class
+				客户.class
 		};
 	}
 
