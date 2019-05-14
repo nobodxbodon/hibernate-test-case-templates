@@ -2,6 +2,13 @@ package org.hibernate.bugs;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class 客户 implements java.io.Serializable {
 
   private Long 客户_ID;
@@ -16,6 +23,7 @@ public class 客户 implements java.io.Serializable {
       this.创建日期 = 创建日期;
   }
 
+  @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
   public Long get客户Id() {
       return this.客户_ID;
   }
@@ -24,6 +32,7 @@ public class 客户 implements java.io.Serializable {
       this.客户_ID = 客户Id;
   }
 
+  @Column(name = "姓名", nullable = false, length=45)
   public String get姓名() {
       return this.姓名;
   }
@@ -32,6 +41,7 @@ public class 客户 implements java.io.Serializable {
       this.姓名 = 姓名;
   }
 
+  @Column(name = "创建日期", nullable = false, length=19)
   public Date get创建日期() {
       return this.创建日期;
   }

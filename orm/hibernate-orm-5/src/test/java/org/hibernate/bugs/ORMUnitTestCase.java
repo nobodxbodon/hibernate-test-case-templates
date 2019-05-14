@@ -15,6 +15,10 @@
  */
 package org.hibernate.bugs;
 
+import java.util.Date;
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.AvailableSettings;
@@ -47,7 +51,7 @@ public class ORMUnitTestCase extends BaseCoreFunctionalTestCase {
 	protected String[] getMappings() {
 		return new String[] {
 //				"Foo.hbm.xml",
-				"Bar.hbm.xml"
+//				"Bar.hbm.xml"
 		};
 	}
 	// If those mappings reside somewhere other than resources/org/hibernate/test, change this.
@@ -72,8 +76,20 @@ public class ORMUnitTestCase extends BaseCoreFunctionalTestCase {
 		// BaseCoreFunctionalTestCase automatically creates the SessionFactory and provides the Session.
 		Session s = openSession();
 		Transaction tx = s.beginTransaction();
-		// Do stuff...
-		tx.commit();
+
+		客户 customer = new 客户();
+
+	    customer.set姓名("Jane Doe");
+	    customer.set创建日期(new Date());
+
+	    s.save(customer);
+	    tx.commit();
+
+	    Query query = s.createQuery("from 客户 where 姓名 = 'Jane Doe' ");
+	    List list = query.list();
+	    for (Object o : list) {
+	      System.out.println(o);
+	    }
 		s.close();
 	}
 }
